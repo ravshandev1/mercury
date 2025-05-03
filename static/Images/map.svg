@@ -1,0 +1,8 @@
+<svg width="64.000000" height="64.000000" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<defs/>
+	<rect id="Duotone/MapPinLine" width="32.000000" height="32.000000" transform="translate(16.000000 16.000000)" fill="#FFFFFF" fill-opacity="0"/>
+	<path id="Vector" d="M23.02 45.98L23 46C22.44 46 22 45.56 22 45C22 44.43 22.44 44 23 44L23.02 44.02L23.02 45.98ZM40.98 44.02L41 44C41.56 44 42 44.43 42 45C42 45.56 41.56 46 41 46L40.98 45.98L40.98 44.02Z" fill="#061C3D" fill-opacity="1.000000" fill-rule="nonzero"/>
+	<path id="Vector" d="M23 45L41 45" stroke="#00AFEF" stroke-opacity="1.000000" stroke-width="2.000000" stroke-linejoin="round" stroke-linecap="round"/>
+	<path id="Vector" d="M32 33C29.79 33 28 31.2 28 29C28 26.79 29.79 25 32 25C34.2 25 36 26.79 36 29C36 31.2 34.2 33 32 33Z" stroke="#00AFEF" stroke-opacity="1.000000" stroke-width="2.000000" stroke-linejoin="round"/>
+	<path id="Vector" d="M32 45C32 45 22 38 22 29C22 26.34 23.05 23.8 24.92 21.92C26.8 20.05 29.34 19 32 19C34.65 19 37.19 20.05 39.07 21.92C40.94 23.8 42 26.34 42 29C42 38 32 45 32 45Z" stroke="#00AFEF" stroke-opacity="1.000000" stroke-width="2.000000" stroke-linejoin="round"/>
+</svg>

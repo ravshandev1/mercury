@@ -1,0 +1,451 @@
+{% load static %}
+{% load static i18n %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercury</title>
+    <link rel="icon" type="image/gif" href="{% static 'Images/mercury-logo.png' %}" class="object-contain">
+    <meta name="description"
+          content="Завод Mercury — производство трубопроводов из полипропилена и полиэтилена в Узбекистане. Гарантия 50 лет. Европейское качество. Доставка по всему Узбекистану.">
+    <meta name="keywords"
+          content="производство труб Узбекистан, трубы из полипропилена, трубы из полиэтилена, купить трубы Узбекистан, трубы для водоснабжения, трубы для отопления, завод труб Mercury, трубы, Фитинги, Фитинги
+        для канализационных труб, Канализационные трубы, Фитинги ППР, пластиковые трубы">
+    <meta name="author" content="Завод Mercury">
+    <meta property="og:title" content="Производство труб в Узбекистане | Завод Mercury">
+    <meta property="og:description"
+          content="Трубы из полипропилена и полиэтилена с гарантией 50 лет. Европейское качество от завода Mercury. Доставка по Узбекистану.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mercury.uz">
+    <!-- Librarys -->
+    <link rel="stylesheet" href="{% static 'Style/main.css' %}">
+    <link rel="stylesheet" href="{% static 'Plugins/aos/aos.css' %}">
+    <script src="{% static 'Plugins/Tailwind/tailwind.js' %}"></script>
+    <script src="{% static 'Plugins/Tailwind/tailwind.config.js' %}"></script>
+    <script src="{% static 'Plugins/Lucide-icon/lucide.min.js' %}"></script>
+    <link rel="stylesheet" href="{% static 'Plugins/Swiper/swiper-bundle.min.css' %}">
+</head>
+<body>
+<div class="wrapper overflow-x-hidden">
+    <nav class="bg-trasparent duration-300 nav-hover py-4 fixed top-0 left-0 right-0 w-full z-[80] text-white border-b border-white/20">
+        <div class="container flex items-center justify-between">
+            <a href="{% url 'index' %}" class="md:w-[90px] md:h-[54px] w-20 h-10 block">
+                <img src="{% static 'Images/logo-white.png' %}" class="w-full h-full object-contain white-logo"
+                     alt="Logo Mercury">
+                <img src="{% static 'Images/mercury-logo-blue.png' %}" class="w-full h-full object-contain blue-logo "
+                     alt="Logo Mercury">
+            </a>
+            <ul class="flex md:items-center max-md:px-12 text-white duration-200 gap-5 max-md:text-xl md:gap-10 max-md:fixed max-md:h-screen max-md:bg-white max-md:py-10 max-md:top-0 z-50  !-right-full max-md:!text-dark max-md:w-[300px] nav-lists max-md:flex-col  font-rubik lg:text-lg lg:gap-14 xl:gap-[77px] max-md:pt-[150px] ">
+                <a href="{% url 'index' %}" class="w-[90px] h-[54px] block md:hidden absolute top-5 left-5">
+                    <img src="{% static 'Images/mercury-logo-blue.png' %}" class="w-full h-full object-contain"
+                         alt="Logo Mercury">
+                </a>
+                <div class="nav-close md:hidden absolute top-7 right-5 cursor-pointer">
+                    <i data-lucide="x"></i>
+                </div>
+                <div class="w-full flex flex-col items-center md:hidden">
+                    <div class="flex items-center  absolute bottom-6  gap-2.5 font-rubik lg:text-lg duration-300 text-dark">
+                        <a href="{% url 'set-language' 'ru' %}"
+                           class="{% if request.LANGUAGE_CODE == 'ru' %}text-lightBlue{% endif %} cursor-pointer">
+                            Ru
+                        </a>
+                        <div class="w-[1px] h-4 lg:h-5 bg-black duration-300"></div>
+                        <a href="{% url 'set-language' 'uz' %}"
+                           class="{% if request.LANGUAGE_CODE == 'uz' %}text-lightBlue{% endif %} cursor-pointer">
+                            Uz
+                        </a>
+                    </div>
+                </div>
+                <li class="relative before:w-0 hover:before:w-1/2 before:duration-200 before:h-[2px] before:rounded-e before:absolute before:-bottom-1 before:left-1/2 before:bg-white  after:w-0 hover:after:w-1/2 after:duration-200 after:h-[2px] after:rounded-s after:absolute after:-bottom-1 after:right-1/2 after:bg-white">
+                    <a href="{% url 'index' %}">{% trans 'Главная' %}</a>
+                </li>
+                <li class="relative before:w-0 hover:before:w-1/2 before:duration-200 before:h-[2px] before:rounded-e before:absolute before:-bottom-1 before:left-1/2 before:bg-white  after:w-0 hover:after:w-1/2 after:duration-200 after:h-[2px] after:rounded-s after:absolute after:-bottom-1 after:right-1/2 after:bg-white">
+                    <a href="{% url 'about' %}">{% trans 'О компании' %}</a>
+                </li>
+                <li class="relative before:w-0 md:hidden hover:before:w-1/2 before:duration-200 before:h-[2px] before:rounded-e before:absolute before:-bottom-1 before:left-1/2 before:bg-white  after:w-0 hover:after:w-1/2 after:duration-200 after:h-[2px] after:rounded-s after:absolute after:-bottom-1 after:right-1/2 after:bg-white">
+                    <a href="{% url 'catalog' %}">{% trans 'Каталог' %}</a>
+                </li>
+                <li class="max-md:hidden">
+                    <div class="flex max-md:flex-col  nav-dropdown  items-center cursor-pointer">
+                        <div class="flex gap-1 items-center">
+                            <span>{% trans 'Каталог' %}</span>
+                            <i data-lucide="chevron-down"></i>
+                        </div>
+                    </div>
+                    <div class="dropdown-item grid max-md:!border-0 grid-rows-[0fr] max-md:text-center md:absolute z-50 top-20 md:top-[87px] bg-white transition-all ease duration-300">
+                        <div class="overflow-hidden text-lg font-rubik ">
+                            <ul class="flex flex-col max-md:items-center max-md:text-base  items-start dropdown-list gap-3 p-5 text-black max-w-[360px]">
+                                {% for i in categories %}
+                                    <li class="relative before:w-0 hover:text-blue hover:before:w-1/2 before:duration-200 before:h-[2px] before:rounded-e before:absolute before:-bottom-1 before:left-1/2 before:bg-blue  after:w-0 hover:after:w-1/2 after:duration-200 after:h-[2px] after:rounded-s after:absolute after:-bottom-1 after:right-1/2 after:bg-blue">
+                                        <a href='{% url 'products' %}?cat={{ i.id }}'>{{ i.name }}</a>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </li>
+                <li class="relative before:w-0 hover:before:w-1/2 before:duration-200 before:h-[2px] before:rounded-e before:absolute before:-bottom-1 before:left-1/2 before:bg-white  after:w-0 hover:after:w-1/2 after:duration-200 after:h-[2px] after:rounded-s after:absolute after:-bottom-1 after:right-1/2 after:bg-white">
+                    <a href="{% url 'contact' %}">{% trans 'Контакты' %}</a>
+                </li>
+            </ul>
+            <div class="flex items-center gap-5 lg:gap-14 ">
+                <div class="flex items-center gap-3 lg:gap-5 duration-300 nav-contacts">
+                    <div class="nav-search"><i data-lucide="search" class=" w-5 h-5"></i></div>
+                    <a href="tel:{{ contract.phone }}" class=""><i data-lucide="phone" class=" w-5 h-5"></i></a>
+                </div>
+                <i data-lucide="menu" class="navbar-burger cursor-pointer md:hidden"></i>
+                <div class="flex items-center max-md:hidden gap-2.5 font-rubik lg:text-lg duration-300 text-white nav-lang">
+                    <a href="{% url 'set-language' 'ru' %}"
+                       class="{% if request.LANGUAGE_CODE == 'ru' %}text-lightBlue{% endif %} cursor-pointer">
+                        Ru
+                    </a>
+                    <div class="w-[1px] h-4 lg:h-5 bg-white vector duration-300"></div>
+                    <a href="{% url 'set-language' 'uz' %}"
+                       class="{% if request.LANGUAGE_CODE == 'uz' %}text-lightBlue{% endif %} cursor-pointer">
+                        Uz
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="w-screen h-[130vh] absolute top-0 left-0 bg-black/70 z-[5] nav-bg hidden"></div>
+    </nav>
+    <div class="w-screen fixed search-screen search-panel -bottom-full duration-200 left-0 bg-white z-50">
+        <div class="container flex flex-col items-center py-10">
+            <div class="w-full flex justify-center gap-2">
+                <input type="text" id="search-input" placeholder="{% trans 'Искать' %}..."
+                       class="min-w-[250px] md:min-w-[340px] border outline-none rounded-lg p-2"/>
+                <button id="search-button"
+                        class="bg-commonBlue text-white rounded-lg px-4 py-2 hover:bg-blue-600">
+                    <i data-lucide="search" class="w-5 h-5"></i>
+                </button>
+            </div>
+        </div>
+        <div class="container h-[70vh] overflow-y-scroll">
+            <div id="search-results" class="w-full grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-5">
+                <!-- AJAX orqali yuklangan natijalar shu yerga keladi -->
+            </div>
+        </div>
+    </div>
+    <header class="w-full relative header">
+        {% for i in carousel %}
+            <img class="w-full h-full absolute top-0 left-0 z-[4] object-cover object-right"
+                 src="{{ i.image.url }}" alt="Mercury header">
+            <div class="w-full h-full bg-black/40 absolute top-0 left-0 z-[5]"></div>
+            <div class="container  relative z-10 w-full h-full flex items-center">
+                <div class="grid grid-cols-1 md:grid-cols-2">
+                    <div class="flex flex-col max-md:items-center gap-4 lg:gap-[30px]">
+                        <h1 class="header-title " data-aos="fade-up">{{ i.text }}</h1>
+                        <a href="{% url 'about' %}" class="current-btn-white" data-aos="fade-up"
+                           data-aos-delay="100">{% trans 'Подробнее' %}</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </header>
+    <main class="min-h-[90vh]">
+        <section class="py-[30px] md:py-[50px] lg:pt-[100px] relative">
+            <div class="container relative z-10 flex flex-col items-center gap-6 md:gap-9 lg:gap-12">
+                <h2 class="section-title" data-aos="fade-up">{% trans 'О компании' %}</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5 lg:gap-10 xl:gap-[58px] ">
+                    <div class="flex flex-col max-md:items-center justify-center gap-3 lg:gap-5">
+                        <p class="section-text" data-aos="fade-right" data-aos-delay="50">{{ about.text }}</p>
+                        <a href="{% url 'about' %}" class="current-btn current-btn-white mt-5 md:mt-0"
+                           data-aos="fade-right"
+                           data-aos-delay="150">{% trans 'Подробнее' %}</a>
+                    </div>
+                    <div class="w-full aspect-[28/23] h-full rounded-[10px] overflow-hidden" data-aos="fade-left">
+                        <img class="w-full h-full" src="{{ about.image.url }}" alt="Mercury About Us">
+                    </div>
+                </div>
+            </div>
+            <div class="w-full aspect-square md:w-1/2 lg:w-1/3 sm:w-[400px] absolute top-0 left-0 z-[2]">
+                <img class="w-full h-full object-contain" src="{% static 'Images/mercury-bg.png' %}" alt="Mercury Logo">
+            </div>
+        </section>
+        <section class="section relative">
+            <div class="container flex flex-col items-center gap-9">
+                <h2 class="section-title" data-aos="fade-up">{% trans 'Каталог' %}</h2>
+                <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-5">
+                    {% for i in categories %}
+                        <div class="w-full cursor-pointer aspect-[2/1] relative group rounded overflow-hidden flex flex-col items-center justify-center"
+                             data-aos="fade-right" data-aos-delay="50">
+                            <img class="w-full h-full object-cover absolute top-0 group-hover:scale-105 duration-500 left-0 z-[5]"
+                                 src="{{ i.image.url }}" alt="Catalog  Mercury">
+                            <div class="w-full h-full bg-black/40 duration-500 group-hover:bg-black/70 absolute top-0 left-0 z-[6]"></div>
+                            <div class="flex font-rubik flex-col items-center text-white z-10 gap-2.5">
+                                <h3 class=" font-medium  text-center max-w-[392px] text-lg md:text-xl lg:text-2xl">{{ i.name }}</h3>
+                                <div class=" opacity-0 group-hover:opacity-100 duration-500">
+                                    <a href="{% url 'products' %}?cat={{ i.id }}"
+                                       class="overflow-hidden flex items-center gap-1  font-rubik font-normal">
+                                        <span>{% trans 'Подробнее' %}</span>
+                                        <i data-lucide="chevron-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+        <section class="section relative">
+            <div class="container flex flex-col items-center">
+                <h2 class="section-title" data-aos="fade-up">{% trans 'Новинки' %}</h2>
+                <a href="{% url 'catalog' %}"
+                   class="text-blue block font-rubik text-sm md:text-base lg:text-lg pt-2 self-end"
+                   data-aos="fade-left">{% trans 'Смотреть все' %}</a>
+                <div class="w-full pt-5">
+                    <div class="swiper swiper-products">
+                        <div class="swiper-wrapper">
+                            {% for i in products %}
+                                <a href="{% url 'detail' i.id %}"
+                                   class="swiper-slide shadow-xl border group rounded-[10px] overflow-hidden duration-200 hover:shadow-2xl "
+                                   data-aos="zoom-in-up" data-aos-delay="50">
+                                    <div class="w-full aspect-[6/5] overflow-hidden">
+                                        <img class="w-full h-full object-cover group-hover:scale-110 duration-200"
+                                             src="{{ i.image.url }}" alt="Product Mercury">
+                                    </div>
+                                    <div class="font-rubik bg-white p-3 md:p-5 text-dark space-y-1.5 md:space-y-2.5">
+                                        <h3 class="line-clamp-1 font-medium md:text-lg md:leading-[21px]">{{ i.name }}</h3>
+                                        <p class="text-sm md:text-base flex items-center gap-1.5 md:leading-[19px]">
+                                            <span>{% trans 'Подробнее' %}</span>
+                                            <i data-lucide="arrow-right" class="w-4 h-4 md:w-5 md:h-5"></i>
+                                        </p>
+                                    </div>
+                                </a>
+                            {% endfor %}
+                        </div>
+                        <div class="swiper-pagination pt-10"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="section relative">
+            <div class="container flex flex-col items-center">
+                <h2 class="section-title" data-aos="fade-up">{% trans 'Наши клиенты' %}</h2>
+                <div class="pt-11 w-full">
+                    <div class="swiper swiper-patrner">
+                        <div class="swiper-wrapper">
+                            {% for i in clients %}
+                                <div class="swiper-slide aspect-[13/4]" data-aos="zoom-in-up"
+                                     data-aos-delay="{{ forloop.counter0 }}50">
+                                    <img class="w-full h-full object-contain" src="{{ i.image.url }}"
+                                         alt="Our Partners">
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="pt-[30px] md:pt-[50px] pb-[50px] md:pb-[100px] font-rubik">
+            <div class="container grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-x-20 relative z-10">
+                <div class="flex flex-col items-start justify-center gap-5 lg:gap-[30px]">
+                    <h2 class="section-title before:hidden hover:text-dark text-start" data-aos="fade-right"
+                        data-aos-delay="50">{% trans 'Связаться с нами' %}</h2>
+                    <div class="space-y-3 lg:space-y-5">
+                        <div class="flex items-center gap-4" data-aos="fade-right" data-aos-delay="150">
+                            <div class="w-9  h-9 md:w-16 md:h-16 shrink-0 overflow-hidden">
+                                <img class="!w-[130%] !h-[130%] object-cover md:!w-full md:!h-full "
+                                     src="{% static 'Images/mail.svg' %}" alt="Mail Icon">
+                            </div>
+                            <div class="space-y-1.5">
+                                <p class="font-rubik text-sm text-[#959595]">{% trans 'Электронная почта' %}</p>
+                                <a href="mailto:{{ contract.email }}"
+                                   class="font-rubik block text-lg md:text-xl">{{ contract.email }}</a>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4" data-aos="fade-right" data-aos-delay="250">
+                            <div class="w-9  h-9 md:w-16 md:h-16 shrink-0 overflow-hidden">
+                                <img class="!w-[130%] !h-[130%] object-cover md:!w-full md:!h-full "
+                                     src="{% static 'Images/phone.svg' %}" alt="Mail Icon">
+                            </div>
+                            <div class="space-y-1.5">
+                                <p class="font-rubik text-sm text-[#959595]">{% trans 'Номер телефона' %}</p>
+                                <a href="tel:{{ contract.phone }}"
+                                   class="font-rubik block text-lg md:text-xl">{{ contract.phone }}</a>
+                                {% for i in contract.phones.all %}
+                                    <a href="tel:{{ contract.phone }}"
+                                       class="font-rubik block text-lg md:text-xl">{{ i.phone }}</a>
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4" data-aos="fade-right" data-aos-delay="350">
+                            <div class="w-9  h-9 md:w-16 md:h-16 shrink-0 overflow-hidden">
+                                <img class="!w-[130%] !h-[130%] object-cover md:!w-full md:!h-full "
+                                     src="{% static 'Images/map.svg' %}" alt="Mail Icon">
+                            </div>
+                            <div class="space-y-1.5">
+                                <p class="font-rubik block text-lg">{{ contract.address }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full h-[1px] bg-[#D9D9D9]" data-aos="fade-up"></div>
+                    <div class="flex items-center gap-5 lg:gap-8">
+                        <a href="{{ contract.facebook }}" target="_blank" class="text-lg text-dark lg:text-xl"
+                           data-aos="fade-up"
+                           data-aos-delay="50">Facebook</a>
+                        <a href="{{ contract.instagram }}" target="_blank" class="text-lg text-dark lg:text-xl"
+                           data-aos="fade-up"
+                           data-aos-delay="150">Instagram</a>
+                        <a href="{{ contract.telegram }}" target="_blank" class="text-lg text-dark lg:text-xl"
+                           data-aos="fade-up"
+                           data-aos-delay="250">Telegram</a>
+                    </div>
+                </div>
+                <div class="w-full aspect-[30/23] h-full rounded-[10px] overflow-hidden max-md:hidden"
+                     data-aos="fade-left">
+                    <iframe class="w-full h-full" src="{{ contract.iframe }}" style="border:0;" allowfullscreen=""
+                            loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-dark py-4 md:py-[30px] font-rubik text-white">
+        <div class="container flex flex-wrap justify-between gap-y-5  ">
+            <div class="w-full space-y-5 md:w-[33%] flex flex-col max-md:items-center">
+                <p class=" text-sm leading-5 max-md:text-center"><span
+                        class="font-bold">{% trans 'Наш адрес' %}:</span> {{ contract.address }}</p>
+                <div class="flex items-center gap-8">
+                    <a class="block" href="{{ contract.instagram }}" target="_blank"><i data-lucide="instagram"
+                                                                                        class="w-5 h-5"></i></a>
+                    <a class="block" href="{{ contract.telegram }}" target="_blank"><img
+                            src="{% static 'Images/telegram.svg' %}"
+                            alt="Telegram Icon" class="w-5 h-5"></a>
+                    <a class="block" href="{{ contract.whatsapp }}" target="_blank"><img
+                            src="{% static 'Images/whatsap.svg' %}"
+                            alt="Whatsapp Icon" class="w-5 h-5"></a>
+                </div>
+            </div>
+            <div class="flex flex-col items-center gap-1.5 w-full md:w-[33%]">
+                <a class="block" href="tel:{{ contract.phone }}">{{ contract.phone }}</a>
+                <a class="block" href="mailto:{{ contract.email }}">{{ contract.email }}</a>
+            </div>
+            <div class="flex flex-col items-center md:items-end w-full gap-1.5 md:gap-5 md:w-[33%] h-full ">
+                <div class="flex items-center gap-2 lg:gap-[18px] ">
+                    <p>{% trans 'Сайт создан' %} : </p>
+                    <a href="https://abduganiev.uz/" target="_blank" class="w-[120px] lg:w-[130px] h-[50px] ">
+                        <img src="{% static 'Images/footer-logo.svg' %}" alt="Abduganiev Logo"
+                             class="shrink-0  w-full h-full object-contain">
+                    </a>
+                </div>
+                <p>&copy <span class="footer-year"></span>. {% trans 'Все права защищены' %}.</p>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<script src="{% static 'Plugins/Lucide-icon/lucide.min.js' %}"></script>
+<script src="{% static 'Plugins/aos/aos.js' %}"></script>
+<script src="{% static 'Js/index.js' %}"></script>
+<script src="{% static 'Plugins/Swiper/swiper-bundle.min.js' %}"></script>
+<script>
+
+</script>
+<script>
+    var swiper = new Swiper(".swiper-products", {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        loop: true,
+        autoplay: {
+            delay: 7000,
+        },
+        breakpoints: {
+            320: {
+                slidesPerView: 1.4,
+                spaceBetween: 10
+            },
+            480: {
+                slidesPerView: 2,
+                spaceBetween: 20
+            },
+            768: {
+                slidesPerView: 3,
+            },
+            1024: {
+                slidesPerView: 4,
+            }
+        }
+    });
+    var swiper = new Swiper(".swiper-patrner", {
+        slidesPerView: 1,
+        loop: true,
+        autoplay: {
+            delay: 5000,
+        },
+        spaceBetween: 10,
+        breakpoints: {
+            320: {
+                slidesPerView: 2,
+                spaceBetween: 10
+            },
+            480: {
+                slidesPerView: 2.3,
+                spaceBetween: 20
+            },
+            768: {
+                slidesPerView: 3.5,
+            },
+            1024: {
+                slidesPerView: 4.4,
+            }
+        }
+    });
+</script>
+<script>
+    function performSearch() {
+        const query = document.getElementById('search-input').value;
+        if (!query.trim()) return;
+
+        fetch(`/search/?q=${encodeURIComponent(query)}`)
+            .then(response => response.json())
+            .then(data => {
+                const container = document.getElementById('search-results');
+                container.innerHTML = '';
+
+                if (data.length === 0) {
+                    container.innerHTML = '<p class="text-center w-full py-5 text-gray-500">Ничего не найдено.</p>';
+                    return;
+                }
+
+                data.forEach(product => {
+                    container.innerHTML += `
+                    <div class="w-full cursor-pointer aspect-[2/1] relative group rounded overflow-hidden flex flex-col items-center justify-center">
+                        <img class="w-full h-full object-cover absolute top-0 group-hover:scale-105 duration-500 left-0 z-[5]" src="${product.image}" alt="${product.name}">
+                        <div class="w-full h-full bg-black/40 duration-500 group-hover:bg-black/70 absolute top-0 left-0 z-[6]"></div>
+                        <div class="flex font-rubik flex-col items-center text-white z-10 gap-2.5">
+                            <h3 class=" font-medium text-center max-w-[392px] text-lg md:text-xl lg:text-2xl">${product.name}</h3>
+                            <div class=" opacity-0 group-hover:opacity-100 duration-500">
+                                <a href="/products/${product.id}/" class="overflow-hidden flex items-center gap-1 font-rubik font-normal">
+                                    <span>Подробнее</span>
+                                    <i data-lucide="chevron-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                });
+
+                lucide.createIcons(); // lucide iconlar yangilansin
+            });
+    }
+
+    // Enter bosilsa ishlaydi
+    document.getElementById('search-input').addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') {
+            e.preventDefault();  // Sahifa reload bo'lishining oldini olamiz
+            performSearch();
+        }
+    });
+
+    // Search icon bosilsa ishlaydi
+    document.getElementById('search-button').addEventListener('click', function () {
+        performSearch();
+    });
+</script>
+</body>
+</html>

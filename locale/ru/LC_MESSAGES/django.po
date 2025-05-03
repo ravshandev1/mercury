@@ -1,0 +1,140 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-05-03 00:31+0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
+"(n%100>=11 && n%100<=14)? 2 : 3);\n"
+#: templates/about.html:64 templates/catalog-filter.html:59
+#: templates/catalog-filter.html:133 templates/catalog.html:61
+#: templates/catalog.html:135 templates/contact.html:75 templates/index.html:61
+#: templates/product-inner.html:59 templates/product-inner.html:133
+msgid "Главная"
+msgstr "Главная"
+
+#: templates/about.html:67 templates/about.html:139 templates/about.html:146
+#: templates/catalog-filter.html:62 templates/catalog.html:64
+#: templates/contact.html:78 templates/index.html:64 templates/index.html:149
+#: templates/product-inner.html:62
+msgid "О компании"
+msgstr "О компании"
+
+#: templates/about.html:70 templates/about.html:75
+#: templates/catalog-filter.html:65 templates/catalog-filter.html:70
+#: templates/catalog.html:67 templates/catalog.html:72
+#: templates/catalog.html:137 templates/catalog.html:140
+#: templates/contact.html:81 templates/contact.html:86 templates/index.html:67
+#: templates/index.html:72 templates/index.html:168
+#: templates/product-inner.html:65 templates/product-inner.html:70
+msgid "Каталог"
+msgstr "Каталог"
+
+#: templates/about.html:92 templates/catalog-filter.html:87
+#: templates/catalog.html:89 templates/contact.html:103 templates/index.html:89
+#: templates/product-inner.html:87
+msgid "Контакты"
+msgstr "Контакты"
+
+#: templates/about.html:120 templates/catalog-filter.html:115
+#: templates/catalog.html:117 templates/contact.html:130
+#: templates/index.html:116 templates/product-inner.html:115
+msgid "Искать"
+msgstr "Искать"
+
+#: templates/about.html:171
+msgid "Сертификаты"
+msgstr "Сертификаты"
+
+#: templates/about.html:188 templates/index.html:225
+msgid "Наши клиенты"
+msgstr "Наши клиенты"
+
+#: templates/about.html:209 templates/catalog-filter.html:180
+#: templates/catalog.html:172 templates/contact.html:215
+#: templates/index.html:308 templates/product-inner.html:240
+msgid "Наш адрес"
+msgstr "Наш адрес"
+
+#: templates/about.html:227 templates/catalog-filter.html:198
+#: templates/catalog.html:190 templates/contact.html:233
+#: templates/index.html:326 templates/product-inner.html:258
+msgid "Сайт создан"
+msgstr "Сайт создан"
+
+#: templates/about.html:233 templates/catalog-filter.html:204
+#: templates/catalog.html:196 templates/contact.html:239
+#: templates/index.html:332 templates/product-inner.html:264
+msgid "Все права защищены"
+msgstr "Все права защищены"
+
+#: templates/catalog-filter.html:139
+msgid "Категории"
+msgstr "Категории"
+
+#: templates/catalog-filter.html:162 templates/catalog.html:153
+#: templates/index.html:140 templates/index.html:155 templates/index.html:181
+#: templates/index.html:211
+msgid "Подробнее"
+msgstr "Подробнее"
+
+#: templates/contact.html:150 templates/index.html:245
+msgid "Связаться с нами"
+msgstr "Связаться с нами"
+
+#: templates/contact.html:158 templates/index.html:253
+msgid "Электронная почта"
+msgstr "Электронная почта"
+
+#: templates/contact.html:169 templates/index.html:264
+msgid "Номер телефона"
+msgstr "Номер телефона"
+
+#: templates/index.html:193
+msgid "Новинки"
+msgstr "Новинки"
+
+#: templates/index.html:196
+msgid "Смотреть все"
+msgstr "Смотреть все"
+
+#: templates/product-inner.html:158
+msgid "Размер"
+msgstr "Размер"
+
+#: templates/product-inner.html:161
+msgid "Цвет"
+msgstr "Цвет"
+
+#: templates/product-inner.html:164
+msgid "В упаковке"
+msgstr "В упаковке"
+
+#: templates/product-inner.html:167
+msgid "Код"
+msgstr "Код"
+
+#: templates/product-inner.html:200
+msgid "Описание"
+msgstr "Описание"
+
+#: templates/product-inner.html:205
+msgid "Технические характеристики"
+msgstr "Технические характеристики"
+
+#: templates/product-inner.html:208
+msgid "Область применения"
+msgstr "Область применения"

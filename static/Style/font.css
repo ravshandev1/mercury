@@ -1,0 +1,16 @@
+@font-face {
+  font-family: 'Rubik';
+  src: url(../Fonts/proximanova_regular.ttf);
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Rubik';
+  src: url(../Fonts/Montserrat-Medium.ttf);
+  font-weight: 500;
+}
+@font-face {
+  font-family: 'Rubik';
+  src: url(../Fonts/Montserrat-SemiBold.ttf);
+  font-weight: 600;
+}

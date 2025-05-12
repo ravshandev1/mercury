@@ -27,7 +27,7 @@ def index(request):
     categories = Category.objects.all()
     clients = Client.objects.all()
     carousel = Carousel.objects.all()
-    products = Product.objects.all()
+    products = Product.objects.all()[:8]
     return render(request, 'index.html',
                   {'contract': contract, 'categories': categories, 'clients': clients, 'about': about,
                    'carousel': carousel, 'products': products})

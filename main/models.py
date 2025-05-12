@@ -1,11 +1,11 @@
 from django.db import models
 from ckeditor.fields import RichTextField
-
+from utils import generate_unique_filename
 
 class About(models.Model):
     text = models.TextField()
-    image = models.ImageField(upload_to='images/')
-    image2 = models.ImageField(upload_to='images/')
+    image = models.ImageField(upload_to=generate_unique_filename)
+    image2 = models.ImageField(upload_to=generate_unique_filename)
 
     def __str__(self):
         return self.text
@@ -13,15 +13,15 @@ class About(models.Model):
 
 class AboutImage(models.Model):
     about = models.ForeignKey(About, models.CASCADE, 'images')
-    image = models.ImageField(upload_to='images/')
-    image2 = models.ImageField(upload_to='images/')
+    image = models.ImageField(upload_to=generate_unique_filename)
+    image2 = models.ImageField(upload_to=generate_unique_filename)
 
     def __str__(self):
         return self.about.text
 
 
 class Carousel(models.Model):
-    image = models.ImageField(upload_to='images/')
+    image = models.ImageField(upload_to=generate_unique_filename)
     text = models.TextField()
 
     def __str__(self):
@@ -30,7 +30,7 @@ class Carousel(models.Model):
 
 class Category(models.Model):
     name = models.CharField(max_length=500)
-    image = models.ImageField(upload_to='images/')
+    image = models.ImageField(upload_to=generate_unique_filename)
 
     def __str__(self):
         return self.name
@@ -38,7 +38,7 @@ class Category(models.Model):
 
 class Product(models.Model):
     name = models.CharField(max_length=500)
-    image = models.ImageField(upload_to='images/')
+    image = models.ImageField(upload_to=generate_unique_filename)
     category = models.ForeignKey(Category, models.CASCADE)
     description = RichTextField()
     scope = RichTextField()
@@ -90,14 +90,14 @@ class Phone(models.Model):
 
 
 class Certificate(models.Model):
-    image = models.FileField(upload_to='images/')
+    image = models.FileField(upload_to=generate_unique_filename)
 
     def __str__(self):
         return self.image.name
 
 
 class Client(models.Model):
-    image = models.FileField(upload_to='images/')
+    image = models.FileField(upload_to=generate_unique_filename)
 
     def __str__(self):
         return self.image.name
